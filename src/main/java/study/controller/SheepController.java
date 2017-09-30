@@ -13,14 +13,19 @@ import java.util.List;
  */
 @RestController
 public class SheepController {
-
     @Resource
     private SheepService sheepService;
 
-    @RequestMapping("/getByAge")
+    @RequestMapping("/get")
     public List<Sheep> getByAge(int age) {
         return sheepService.getByAge(age);
     }
+
+    @RequestMapping("/save")
+    public void save(Sheep sheep){
+        sheepService.saveSheep(sheep);
+    }
+
 
     @RequestMapping("/")
     public String home(){
