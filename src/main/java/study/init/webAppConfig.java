@@ -11,6 +11,12 @@ import study.interceptor.logInterceptor;
 @Configuration
 public class webAppConfig extends WebMvcConfigurerAdapter {
 
+    /**
+     * 注解使用拦截器
+     * addPathPatterns 用于添加拦截规则
+     * 多次添加多个拦截器组成一个拦截器链
+     * @param registry
+     */
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
             registry.addInterceptor(new logInterceptor()).addPathPatterns("/**");
