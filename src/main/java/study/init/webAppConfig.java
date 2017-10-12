@@ -19,7 +19,8 @@ public class webAppConfig extends WebMvcConfigurerAdapter {
      */
         @Override
         public void addInterceptors(InterceptorRegistry registry) {
-            registry.addInterceptor(new logInterceptor()).addPathPatterns("/**");
+            /**拦截除了toLogin 和 login 之外的所有请求*/
+            registry.addInterceptor(new logInterceptor()).addPathPatterns("/**").excludePathPatterns("/toLogin","/login");
             super.addInterceptors(registry);
         }
     }

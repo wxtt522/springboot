@@ -8,13 +8,21 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.WebApplicationInitializer;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.DispatcherServlet;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 
 /**
  * Created by Administrator on 2017/8/16.
  */
 @SpringBootApplication
 @MapperScan("study.dao")
-public class Application extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer implements WebApplicationInitializer {
 
     /**继承后重写configure方法，同时在pom文件中添加<packaging>war</packaging>
      * 可以使用外部tomcat
@@ -34,5 +42,15 @@ public class Application extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
     }
+
+/*    public void onStartup(ServletContext servletContext) throws ServletException {
+        AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+        servletContext.addListener(new ContextLoaderListener(context));
+
+        ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher", new DispatcherServlet(context));
+        servlet.addMapping("*.htm");
+//        servlet.setLoadOnStartup(2);
+
+    }*/
 
 }

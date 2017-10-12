@@ -25,6 +25,18 @@ public class logInterceptor implements HandlerInterceptor {
 
         logger.info("请求路径requestUrl:{}, -提交类型 method:{}"+",-请求参数 paramList :{" +params+ "}",requestUrl,method);
         return true;
+
+/*       添加登录拦截
+ boolean flag =true;
+        User user=(User)request.getSession().getAttribute("user");
+        if(null==user){
+            response.sendRedirect("toLogin");
+            flag = false;
+        }else{
+            flag = true;
+        }
+        return flag;*/
+
     }
 
     //获取请求参数

@@ -27,8 +27,8 @@ public class SheepController {
     }
 
 
-    @RequestMapping("/")
-    public String home(){
-        return "fuck!";
-    }
+//    @RequestMapping("/")
+//    public String home(){
+//        return "fuck!";
+//    }
 }
