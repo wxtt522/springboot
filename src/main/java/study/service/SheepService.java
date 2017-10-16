@@ -20,6 +20,10 @@ public class SheepService implements Serializable{
         return sheepMapper.getByAge(age);
     }
 
+    public List<Sheep> getxml(int age) {
+        return sheepMapper.findByXml(age);
+    }
+
     public void saveSheep(Sheep sheep){
         sheepMapper.save(sheep);
     }

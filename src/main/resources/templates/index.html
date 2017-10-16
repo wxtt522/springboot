@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>bootStrap的调用</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{js/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{js/bootstrap/css/bootstrap-theme.min.css}" rel="stylesheet" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1" />
+</head>
+<body>
+
+<!--<div style="text-align: center;margin:0 auto;width: 1000px; ">-->
+<div ><!--style="text-align: center;margin:0 auto;width: 1000px; "-->
+    <h1 class="panel-title">thymeleaf+bootstrap test</h1>
+    <table class="table-responsive"> <!--width="100%" border="1" cellspacing="1" cellpadding="0"-->
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>age</td>
+            <td>sex</td>
+        </tr>
+        <!--/*@thymesVar id="learnList" type=""*/-->
+        <tr th:each="sheep : ${sheepList}">
+            <td th:text="${sheep.id}"></td>
+            <td th:text="${sheep.name}"></td>
+            <td th:text="${sheep.age}"></td>
+            <td th:text="${sheep.sex}" target="_blank"></td>
+        </tr>
+    </table>
+</div>
+</body>
+<script th:src="@{js/jquery/jquery-3.2.1.js}" type="text/javascript"></script>
+<script th:src="@{js/bootstrap/js/bootstrap.min.js}" type="text/javascript"></script>
+</html>

@@ -26,6 +26,10 @@ public class SheepController {
         sheepService.saveSheep(sheep);
     }
 
+    @RequestMapping("/getByXml")
+    public List<Sheep> getByMapper(int age) {
+        return sheepService.getxml(age);
+    }
 
 //    @RequestMapping("/")
 //    public String home(){

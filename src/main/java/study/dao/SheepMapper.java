@@ -1,9 +1,6 @@
 package study.dao;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import study.entity.Sheep;
 
 import java.util.List;
@@ -20,11 +17,11 @@ public interface SheepMapper {
     @Delete("delete *from sheep where id =#{id}")
     void delete(int id);
 
-    @Select("select *from sheep")
-    List<Sheep> findAll();
+    List<Sheep> findByXml(@Param("age") int age);
 
     @Select("select *from sheep where age = #{age}")
     List<Sheep> getByAge(int age);
+
 
 
 }
