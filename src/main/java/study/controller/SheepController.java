@@ -1,7 +1,7 @@
 package study.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.*;
 import study.entity.Sheep;
 import study.service.SheepService;
 
@@ -30,6 +30,25 @@ public class SheepController {
     public List<Sheep> getByMapper(int age) {
         return sheepService.getxml(age);
     }
+
+
+    /**@PathVariable
+     * 接受数据方式
+     */
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String getUser(@PathVariable Long id, ModelMap map) {
+//        map.addAttribute("user", userService.findById(id));
+        map.addAttribute("action", "update");
+        return "userForm";
+    }
+
+    /**转发的方式*/
+    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    public String postUser(@ModelAttribute Sheep user) {
+//        userService.insertByUser(user);
+        return "redirect:/users/";
+    }
+
 
 //    @RequestMapping("/")
 //    public String home(){
