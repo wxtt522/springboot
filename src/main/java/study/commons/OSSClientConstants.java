@@ -12,7 +12,7 @@ public class OSSClientConstants {
     //阿里云API的密钥Access Key ID
     public static final String ACCESS_KEY_ID = "LTAIy3NicWl6LleZ";
     //阿里云API的密钥Access Key Secret
-    public static final String ACCESS_KEY_SECRET = "";
+    public static final String ACCESS_KEY_SECRET = "B66HABrHSrYMc5o5kUOizkpjO7BVOM";
     //阿里云API的bucket名称
     public static final String BACKET_NAME = "htaocar";
     //阿里云API的文件夹名称
