@@ -23,5 +23,4 @@ public interface SheepMapper {
     List<Sheep> getByAge(int age);
 
 
-
 }

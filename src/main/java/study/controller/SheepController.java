@@ -81,7 +81,11 @@ public class SheepController {
         return "userForm";
     }
 
-    /**转发的方式*/
+    /**转发的方式,这他妈才是重定向
+     * springboot默认使用的就是转发，static和templates文件夹本来就不接受直接访问
+     *
+     * */
+
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String postUser(@ModelAttribute Sheep user) {
 //        userService.insertByUser(user);
