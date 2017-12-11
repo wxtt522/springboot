@@ -1,0 +1,54 @@
+l -f file -n 20
+r
+#进程查看 # ps -aux;ef | grep tomcat
+#下载文件 # wget $paht/zip.file
+#访问别的服务器 # ssh ip /account/passwd
+#查看本机hosts配置文件 #cat /etc/hosts
+#查看本机内网ip #ifconfig
+#查看本机映射的公网ip #curl members.3322.org/dyndns/getip [前提是已经映射过]
+#查看防火墙 # service iptables status
+#清空屏幕 # reset / clear
+#端口占用 # netstat -lntp;anp;vatn
+#查看dns # cat /etc/resolv.conf
+#查看某个文件或目录占用磁盘空间的大小 # du -ah --max-dept=1
+#查看隐藏文件 # ll -a; ls -a; l. ls -d .*
+#查看挂接的分区状态 # mount | column -t 
+#解除挂载  #umount --20170407(虚拟机安装VMWareTools.tar.gz)
+#访问链接 # curl url ;   查看访问链接http头的信息 Curl url -I
+ 
+---系统命令---
+#查看系统多少位 #getconfLONG_BIT
+#查看内核/操作系统/CPU信息# uname -a
+#查看操作系统版本 # head -n 1/etc/issue ; cat ..
+# cat/proc/cpuinfo # 查看 cpu信息
+# hostname # 查看计算机名
+# lspci -tv # 列出所有PCI设备
+# lsusb -tv # 列出所有USB设备
+# lsmod # 列出加载的内核模块
+# env # 查看环境变量资源
+# grep MemTotal/proc/meminfo # 查看内存总量
+# grep MemFree/proc/meminfo # 查看空闲内存量
+# uptime #查看系统运行时间、用户数、负载
+# cat /proc/loadavg #查看系统负载磁盘和分区
+# fdisk -l # 查看所有分区
+# swapon -s # 查看所有
+# hdparm -i /dev/hda #查看磁盘参数(仅适用于)
+# dmesg | grep IDE #查看启动时检测状况网络
+# ifconfig # 查看所有的属性
+# iptables -L # 查看防火墙设置
+# route -n # 查看路由表
+# top # 实时显示用户
+# w # 查看活动用户
+# id <用户名> #查看指定用户信息
+# last # 查看日志
+# cut -d: - /etc/passwd# 查看系统所有用户
+# cut -d: - /etc/group# 查看系统所有组
+# crontab -l #查看当前用户的计划任务服务
+# chkconfig –list #列出所有系统服务
+# chkconfig –list |grep on # 列出所有启动的系统服务程序
+# rpm -qa # 查看所有安装的软件包
+ 
+echo、cat命令：添加内容
+echo “hello world!” >> a.txt：添加内容到文件a里面
+cat <<EOF>> a.txt : 可以添加多行语句到文件本身内容的末尾
+cat <<EOF> a.txt：添加内容到文件并覆盖到原始的内容
